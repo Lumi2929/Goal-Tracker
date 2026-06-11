@@ -1,0 +1,6 @@
+{
+  "name": "Apple Goal Tracker",
+  "description": "A personal goal tracking system based on Apple Calendar and Reminders data with configurable rules, aggregation calculations, and historical analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

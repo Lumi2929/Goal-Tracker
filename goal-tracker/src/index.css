@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-natural-bg: #F8F7F2;
+  --color-natural-surface: #FFFFFF;
+  --color-natural-accent: #6B705C;
+  --color-natural-accent-soft: #A5A58D;
+  --color-natural-text: #333332;
+  --color-natural-muted: #7F7F7B;
+  --color-natural-border: #E5E5E0;
+  
+  --color-status-ok-bg: #E9EDC9;
+  --color-status-ok-text: #5A5A40;
+  --color-status-ok-border: #CCD5AE;
+  
+  --color-status-off-bg: #FDE2E4;
+  --color-status-off-text: #C9184A;
+  --color-status-off-border: #FFCCD5;
+
+  --color-auxiliary: #DDA15E;
+
+  --font-serif: "Georgia", ui-serif, serif;
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* 
+ * Mobile Sizing Optimizations (width < 640px)
+ * Reduces page font size and module sizes to display substantially more content simultaneously.
+ */
+@media (max-width: 639px) {
+  /* Reduce global base document size */
+  html {
+    font-size: 11px !important;
+  }
+
+  /* Make main layout container padding and margins tighter */
+  #application-container {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  main#appl-main {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Compact navigation bars */
+  header#appl-header > div {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    gap: 6px !important;
+  }
+
+  header#appl-header h1 {
+    font-size: 13px !important;
+  }
+
+  header#appl-header p {
+    font-size: 8px !important;
+  }
+
+  nav button {
+    padding: 3.5px 6px !important;
+    font-size: 10px !important;
+    border-radius: 6px !important;
+  }
+
+  /* Dashboard Filters and header bar spacing */
+  .flex.justify-between.items-center.flex-wrap.gap-4 {
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Grid Layout gaps */
+  .grid {
+    gap: 8px !important;
+  }
+
+  /* Shrink sizes of goal cards / modules */
+  [id^="goal-card-"] {
+    padding: 10px 8px !important;
+    gap: 6px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Left column adjustments */
+  [id^="goal-card-"] h3 {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  [id^="goal-card-"] .mt-2 {
+    margin-top: 4px !important;
+  }
+
+  [id^="goal-card-"] p {
+    font-size: 12px !important;
+  }
+
+  [id^="goal-card-"] .mt-2 p:last-child {
+    font-size: 10px !important;
+  }
+
+  /* Center ring column */
+  [id^="goal-card-"] > div:nth-child(2) {
+    width: 76px !important;
+    padding: 0 !important;
+    gap: 4px !important;
+    margin-left: -6px !important;
+    left: -6px !important;
+  }
+
+  /* Inline label metrics */
+  [id^="goal-card-"] > div:nth-child(2) > div:first-child {
+    padding: 1px 4px !important;
+    font-size: 7.5px !important;
+    line-height: inherit !important;
+  }
+
+  /* SVG Ring size */
+  [id^="goal-card-"] > div:nth-child(2) svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  [id^="goal-card-"] > div:nth-child(2) span {
+    font-size: 7.5px !important;
+  }
+
+  /* Right column checking matrix */
+  [id^="goal-card-"] > div:nth-child(3) {
+    width: 140px !important;
+    padding: 0 !important;
+    margin-left: -12px !important;
+    left: -12px !important;
+  }
+
+  [id^="goal-card-"] > div:nth-child(3) > span {
+    font-size: 7px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Scale checkmarks matrix */
+  [id^="goal-card-"] > div:nth-child(3) > div {
+    transform: scale(1) !important;
+    transform-origin: center !important;
+  }
+
+  /* Square size of Historical analysis indicators on mobile */
+  [id^="goal-card-"] > div:nth-child(3) > div > div > div:first-child {
+    width: 11px !important;
+    height: 11px !important;
+    border-radius: 2px !important;
+  }
+
+  /* Checkmark icon inside Historical analysis indicators on mobile */
+  [id^="goal-card-"] > div:nth-child(3) > div > div > div:first-child svg {
+    width: 7px !important;
+    height: 7px !important;
+  }
+
+  /* Indicator badge checkmark/cross SVG on mobile */
+  [id^="goal-card-"] > div:nth-child(2) > div:first-child svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  /* Sync alerts trace module shrink */
+  .bg-status-ok-bg\/30.border {
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+  }
+}
+
+/* Custom CSS styling from Focus Mode selection */
+div#root:nth-of-type(1) > div#application-container:nth-of-type(1) > main#appl-main:nth-of-type(1) > div#dashboard-container:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) {
+  height: 33px !important;
+  font-size: 11px !important;
+  width: 200px !important;
+}
+
